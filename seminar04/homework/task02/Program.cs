@@ -23,7 +23,7 @@ while (true)
 {
     Console.Write("Задайте размер массива:");
     string? input = Console.ReadLine();
-    if (int.TryParse(input, out int N))
+    if (int.TryParse(input, out int N) && N > 0)
     {
         int[] someArray = CreateArray(N);
         Console.WriteLine($"[ {string.Join("; ", someArray)} ]");
