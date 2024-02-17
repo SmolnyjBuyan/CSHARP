@@ -5,17 +5,21 @@
     else return CountAckermann(n - 1, CountAckermann(n, m - 1));
 }
 
-int GetValue(string name)
+int GetPositiveInteger(string name)
 {
     while(true)
     {
         Console.Write($"Задайте значение {name}: ");
         if (int.TryParse(Console.ReadLine(), out int result))
         {
-            return result;
+            if (result < 0) Console.WriteLine("Число должно быть неотрицательным");
+            else return result;
         }
-        Console.WriteLine("Не удалось распознать число, попробуйте еще раз");
+        else Console.WriteLine("Не удалось распознать число, попробуйте еще раз");
     }
 }
 
-Console.WriteLine(CountAckermann(GetValue("n"), GetValue("m")));
+int n = GetPositiveInteger("n");
+int m = GetPositiveInteger("m");
+
+Console.WriteLine($"A({n},{m}) = {CountAckermann(n, m)}");

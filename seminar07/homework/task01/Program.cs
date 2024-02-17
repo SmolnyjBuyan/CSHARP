@@ -40,4 +40,8 @@ int M = GetValue("M");
 int N = GetValue("N");
 
 if (M <= 0 && N <= 0) Console.WriteLine("В этом отрезке не существует натуральных чисел");
-else PrintNumbers(CheckValueForConditions(M), CheckValueForConditions(N), GetStep(M, N));
+else
+{
+    Console.WriteLine($"Натуральные числа в промежутке от {M} до {N}: ");
+    PrintNumbers(CheckValueForConditions(M), CheckValueForConditions(N), GetStep(M, N));
+}
